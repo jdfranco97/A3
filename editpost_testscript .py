@@ -14,13 +14,13 @@ class addPost(unittest.TestCase):
         user = "admin"
         pwd = "password123"
         driver.maximize_window()
-        driver.get("http://127.0.0.1:8000/admin")
+        driver.get("http://rentadev.pythonanywhere.com/admin")
         elem = driver.find_element_by_id("id_username")
         elem.send_keys(user)
         elem = driver.find_element_by_id("id_password")
         elem.send_keys(pwd)
         elem.send_keys(Keys.RETURN)
-        driver.get("http://127.0.0.1:8000")
+        driver.get("http://rentadev.pythonanywhere.com/")
         assert "Logged In"
         time.sleep(2)
         elem = driver.find_element_by_xpath("//*[@id='myNavbar']/ul[2]/ul/li[2]").click()
